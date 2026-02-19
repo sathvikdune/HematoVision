@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Cell Classification</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
+
+body{
+    background:#eef2f6;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#0B3C5D;
+    padding:18px 60px;
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* HERO SECTION */
+.hero{
+    text-align:center;
+    margin-top:60px;
+}
+
+.hero h1{
+    font-size:34px;
+    color:#0B3C5D;
+}
+
+.hero p{
+    color:#6b7c93;
+    margin-top:10px;
+}
+
+/* MAIN CARD */
+.container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.card{
+    width:430px;
+    background:white;
+    padding:40px;
+    border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+input[type="file"]{
+    width:100%;
+    padding:12px;
+    border:1px solid #dce3ea;
+    border-radius:8px;
+    margin:25px 0;
+    background:#fafbfc;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    background:#1D6FA3;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#155A86;
+}
+
+.info{
+    margin-top:20px;
+    font-size:13px;
+    color:#8a97a8;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:80px;
+    padding:20px;
+    color:#94a3b8;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">🧬 AI Blood Cell Analyzer</div>
+
+<div class="hero">
+    <h1>Blood Cell Classification System</h1>
+    <p>Upload a microscopic image and let AI identify the cell type instantly</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Analyze Image</button>
+        </form>
+
+        <div class="info">
+            Supported classes: Eosinophil • Lymphocyte • Monocyte • Neutrophil
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    AI Medical Imaging Prototype • Flask + TensorFlow
+</div>
+
+</body>
+</html>
